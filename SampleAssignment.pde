@@ -5,21 +5,28 @@ void setup()
 }
 int i = 1;
 int y = 0;
+boolean joe = true;
 void draw()
 {
   fill(0);
   rect(0,0,500,500);
   translate(250,250);
-  fill(129,244,17);
-  
+  fill(255);
   rotate(i*PI/36);
   ellipse(100,y,100,100);
-  if(y<250){
-    y+= .5;
+  ellipse(-100,-y,100,100);
+  if(y>250){
+    joe = false;
   }
-  else{
-    y--;
+  else if (y ==0){
+    joe = true;
   }  
+  if(joe == true){
+    y++;
+  }
+  else if(joe== false){
+    y--;
+  }
   
   i++;
   
